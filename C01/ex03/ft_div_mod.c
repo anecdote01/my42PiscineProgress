@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:06:08 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/13 10:55:33 by mkorucu          ###   ########.fr       */
+/*   Created: 2022/02/14 12:46:38 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/14 12:46:41 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_reverse_alphabet(void)
-{
-	char	c;
-
-	c = 'z';
-	while (c >= 'a')
-	{
-		ft_putchar(c);
-		c--;
-	}
+	*div = a / b;
+	*mod = a % b;
 }

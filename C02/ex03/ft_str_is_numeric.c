@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:06:08 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/13 10:55:33 by mkorucu          ###   ########.fr       */
+/*   Created: 2022/02/14 15:20:49 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/14 17:50:59 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int	ft_str_is_numeric(char *str)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_reverse_alphabet(void)
-{
-	char	c;
-
-	c = 'z';
-	while (c >= 'a')
+	if (*str == '\0')
+		return (1);
+	while (*str != '\0')
 	{
-		ft_putchar(c);
-		c--;
+		if (!(*str <= '9' && *str >= '0'))
+			return (0);
+		str++;
 	}
+	return (1);
 }

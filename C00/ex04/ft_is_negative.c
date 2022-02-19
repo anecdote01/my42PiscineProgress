@@ -6,7 +6,7 @@
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:54:34 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/10 12:42:28 by mkorucu          ###   ########.fr       */
+/*   Updated: 2022/02/13 11:29:49 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,3 @@ void	ft_is_negative(int n)
 		write (1, "P", 1);
 	}
 }
-/*
-int main()
-{
-ft_is_negative(5);
-return 0;
-}
- */

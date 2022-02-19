@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:06:08 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/13 10:55:33 by mkorucu          ###   ########.fr       */
+/*   Created: 2022/02/16 15:55:01 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/16 17:21:18 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_put_hexa(unsigned char c)
 {
+	c += '0';
+	if (c > '9')
+		c = 'a' + (c - '9' - 1);
 	write(1, &c, 1);
 }
 
-void	ft_print_reverse_alphabet(void)
+void	ft_hexa_convert(unsigned char c)
 {
-	char	c;
+	write(1, "\\", 1);
+	ft_put_hexa((int)c / 16);
+	ft_put_hexa((int)c % 16);
+}
 
-	c = 'z';
-	while (c >= 'a')
+void	ft_putstr_non_printable(char *str)
+{
+	while (*str != '\0')
 	{
-		ft_putchar(c);
-		c--;
+		if (*str >= 32 && *str < 127)
+			write(1, str, 1);
+		else
+			ft_hexa_convert(*str);
+		str++;
 	}
 }

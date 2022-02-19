@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:06:08 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/13 10:55:33 by mkorucu          ###   ########.fr       */
+/*   Created: 2022/02/13 12:23:52 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/13 13:12:44 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,24 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_reverse_alphabet(void)
+void	ft_print_comb2(void)
 {
-	char	c;
+	int	firpair;
+	int	secpair;
 
-	c = 'z';
-	while (c >= 'a')
+	firpair = -1;
+	while (++firpair <= 99)
 	{
-		ft_putchar(c);
-		c--;
+		secpair = firpair;
+		while (++secpair <= 99)
+		{
+			ft_putchar(firpair / 10 + '0');
+			ft_putchar(firpair % 10 + '0');
+			write (1, " ", 1);
+			ft_putchar(secpair / 10 + '0');
+			ft_putchar(secpair % 10 + '0');
+			if (firpair != 98 || secpair != 99)
+				write(1, ", ", 2);
+		}
 	}
 }

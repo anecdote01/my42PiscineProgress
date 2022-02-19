@@ -6,7 +6,7 @@
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:53:29 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/10 11:57:10 by mkorucu          ###   ########.fr       */
+/*   Updated: 2022/02/13 10:48:28 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,3 @@ void	ft_print_alphabet(void)
 		i++;
 	}
 }
-/*
-int main()
-{
-    ft_print_alphabet();
-}*/

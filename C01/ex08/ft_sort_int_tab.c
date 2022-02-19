@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:06:08 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/13 10:55:33 by mkorucu          ###   ########.fr       */
+/*   Created: 2022/02/14 12:43:25 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/14 12:44:23 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	write(1, &c, 1);
-}
+	int	y;
+	int	swap;
 
-void	ft_print_reverse_alphabet(void)
-{
-	char	c;
-
-	c = 'z';
-	while (c >= 'a')
+	y = 0;
+	while (y < size - 1)
 	{
-		ft_putchar(c);
-		c--;
+		if (tab[y] > tab[y + 1])
+		{
+			swap = tab[y + 1];
+			tab[y + 1] = tab[y];
+			tab[y] = swap;
+			y = 0;
+		}
+		else
+			y++;
 	}
 }

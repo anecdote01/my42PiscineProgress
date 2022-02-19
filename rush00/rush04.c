@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:06:08 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/13 10:55:33 by mkorucu          ###   ########.fr       */
+/*   Created: 2022/02/12 18:26:31 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/13 15:56:56 by caucar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,34 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_reverse_alphabet(void)
+void	ft_rush(int y, int x)
 {
-	char	c;
+	int	r;
+	int	c;
 
-	c = 'z';
-	while (c >= 'a')
+	r = 1;
+	while (r <= x && x > 0)
 	{
-		ft_putchar(c);
-		c--;
-	}
+		c = 1;
+		while (c <= y && y > 0)
+		{
+			if ((c == 1 && r == 1) || (c == y && r == x && c != 1 && r != 1))
+				ft_putchar('A');
+			else if ((c == y && r == 1) || (c == 1 && r == x))
+				ft_putchar('C');
+			else if (c == 1 || r == 1 || c == y || r == x)
+				ft_putchar('B');
+			else
+				ft_putchar(' ');
+			c++;
+		}
+		ft_putchar('\n');
+		r++;
+	}	
+}
+
+int	main(void)
+{
+	ft_rush(4, 4);
+	return (0);
 }

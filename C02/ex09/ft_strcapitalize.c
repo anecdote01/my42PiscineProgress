@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:06:08 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/13 10:55:33 by mkorucu          ###   ########.fr       */
+/*   Created: 2022/02/16 14:38:15 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/16 14:46:26 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+char	*ft_strcapitalize(char *str)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_reverse_alphabet(void)
-{
+	int		i;
+	int		next;
 	char	c;
 
-	c = 'z';
-	while (c >= 'a')
+	i = 0;
+	next = 1;
+	while (str[i] != '\0')
 	{
-		ft_putchar(c);
-		c--;
+		c = str[i];
+		if (next == 1 && c >= 'a' && c <= 'z')
+			str[i] -= 32;
+		else if (next == 0 && c >= 'A' && c <= 'Z')
+			str[i] += 32;
+		if (c < '0' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a') || c > 122)
+			next = 1;
+		else
+			next = 0;
+		i++;
 	}
+	return (str);
 }

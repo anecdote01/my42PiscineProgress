@@ -6,7 +6,7 @@
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:46:06 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/10 11:12:56 by mkorucu          ###   ########.fr       */
+/*   Updated: 2022/02/13 10:44:16 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,3 @@ void	ft_putchar(char c)
 {
 	write (1, &c, 1);
 }
-/*
-int	main()
-{
-    ft_putchar('a');
-}
-*/

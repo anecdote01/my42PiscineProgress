@@ -6,7 +6,7 @@
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 13:30:48 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/10 14:04:04 by mkorucu          ###   ########.fr       */
+/*   Updated: 2022/02/13 11:01:00 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,3 @@ void	ft_print_comb(void)
 		x++;
 	}
 }
-/*
-int main()
-{
-	ft_print_comb();
-	return 0;
-}*/

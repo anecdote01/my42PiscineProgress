@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 15:02:05 by mkorucu           #+#    #+#             */
-/*   Updated: 2022/02/22 21:41:48 by mkorucu          ###   ########.fr       */
+/*   Created: 2022/02/23 00:38:42 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/23 00:48:12 by mkorucu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-//#include <stdio.h>
 
-void	ft_putstr(char *str)
+int strcmp(char **arg1,char **arg2)
 {
-	while (*str != '\0')
-		write(1, str++, 1);
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (arg1[i][j] != '\0' && arg2[i][j] != '\0')
+		j++;
 }
-/*
-int main()
+
+int	main(int argc, char **argv)
 {
-	ft_putstr("mehmet soner korucu");
-	return 0;
-}*/
+	
+}

@@ -1,52 +1,59 @@
-#include <unistd.h>
-#include <stdio.h>
-int    ft_char_to_int(char *p, int i,int sign)
-{
-    int x;
-    int decimal;
-    int y = 0;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkorucu <mkorucu@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/23 02:44:00 by mkorucu           #+#    #+#             */
+/*   Updated: 2022/02/23 03:07:28 by mkorucu          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    x = 0;
-    while(i > 0)
-    {
-        decimal = 1;
-        y = i--;
-        while (y-- > 1)
-            decimal *= 10;
-        x += (int)(*p++ - '0')*decimal;
-    }
-    if (sign%2 )
-        x *= -1;
-    return x;
+#include <unistd.h>
+//#include <stdio.h>
+
+int	whitespaces(char *str, int *ptr_i)
+{
+	int	count;
+	int	i;
+
+	i = 0;
+	count = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] == 43 || str[i] == 45)
+	{
+		if (str[i] == 45)
+			count *= -1;
+		i++;
+	}
+	*ptr_i = i;
+	return (count);
 }
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-    int i;
-    int sign;
+	int	sign;
+	int	result;
+	int	i;
 
-    sign = 0;
-    i = 0;
-    while (*str != '\0')
-    {
-        if(*str == '-')
-            sign++;
-        while (*str <= '9' && *str >= '0')
-        {
-            i++;
-            str++;
-        }
-        str -= i;
-        if (i != 0)
-            return (ft_char_to_int(str,i,sign));
-        str++;
-    }
-    return (0);
+	result = 0;
+	sign = whitespaces(str, &i);
+	while (str[i] != '\0' && str[i] >= 48 && str[i] <= 57)
+	{
+		result *= 10;
+		result += str[i] - 48;
+		i++;
+	}
+	result *= sign;
+	return (result);
 }
 /*
-int main(void)
+int	main(void)
 {
-    printf("%d\n",ft_atoi("  ---+--+3236414562ab567"));
-    return 0;
-}
-integer ın alamadığı sayılarda sapıtıyor..*/
+	char	*s;
+
+	s = "   ---+--+01234506789ab567";
+	printf("%d\n", ft_atoi(s));
+}*/
